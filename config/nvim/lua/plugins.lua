@@ -30,16 +30,6 @@ require("lazy").setup({
     lazy = false,
     build = ':TSUpdate'
   },
-  --  code compoanion
-  {
-    "olimorris/codecompanion.nvim",
-    version = "^19.0.0",
-    opts = {},
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-  },
   --  LSP support
   {
     "neovim/nvim-lspconfig",
