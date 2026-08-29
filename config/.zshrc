@@ -145,6 +145,8 @@ export PATH="/usr/local/go/bin:$PATH"
 PATH=~/.console-ninja/.bin:$PATH
 # Created by `pipx` on 2024-07-06 08:56:01
 export PATH="$PATH:/Users/hojat/.local/bin"
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH="$JAVA_HOME/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -201,3 +203,7 @@ export PATH="/usr/local/kerio/vpnclient:/opt/nvim/bin:$PATH"
 #compdef kubecolor=kubectl
 eval "$(uv generate-shell-completion zsh)"
 set -a; [ -f ~/.env ] && source ~/.env; set +a
+export PATH="$HOME/.local/bin:$PATH"
+
+# opencode
+export PATH=/home/hojat/.opencode/bin:$PATH

@@ -18,6 +18,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("plugins")
+require("completion")
+require("lsp")
 
 -- Theme
 vim.cmd.colorscheme("tokyonight")
