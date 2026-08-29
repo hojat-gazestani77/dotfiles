@@ -105,4 +105,17 @@ require("lazy").setup({
       "nvim-treesitter/nvim-treesitter",
     },
   }, 
+
+  -- nini move
+  "echasnovski/mini.move",
+  version = "*",
+  opts = {
+    mappings = {
+      -- Move visual selection
+      left = '<C-h>',
+      right = '<C-l>',
+      down = '<C-j>',
+      up = '<C-k>',
+    },
+  },
 })

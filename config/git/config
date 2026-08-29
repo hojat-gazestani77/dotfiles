@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
-	name = Hojat Gazestani
-	email = 39824268+hojat-gazestani@users.noreply.github.com
+	name = h.gazestani
+	email = h.gazestani@inside.sahab.ir
 
 [core]
     pager = delta
@@ -82,3 +82,5 @@
 	clean = git-lfs clean -- %f
 [color]
 	ui = auto
+[credential]
+	helper = cache --timeout=28800
