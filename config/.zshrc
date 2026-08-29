@@ -1,4 +1,6 @@
-GH_TOKEN=$VAR_GH_TOKEN
+source .env
+[ -f ~/.env ] && source ~/.env
+export GH_TOKEN=$VAR_GH_TOKEN
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -8,7 +10,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/go/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -132,6 +134,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     fi
 fi
 
+
 g-ckeckout-commit() { git log --oneline --decorate | fzf --preview 'git diff main..$(echo {} | awk "{print \$1}") | delta --features line-numbers decorations' | awk "{print \$1}" | xargs git checkout; }
 gcmp() { gc -am "$1" && gp; }
 
@@ -178,21 +181,18 @@ echo "Exporting Orca kubernetes config file"
 export KUBECONFIG=~/.kube/config
 
 zstyle ':completion:*:ssh:*' hosts $(awk '/^Host / {print $2}' ~/.ssh/config)
-export DJANGO_SECRET_KEY='r6@8mwjhf@@=+2^!_^lz!9z$x2aj-*5^cy9aw05pff!t^3ga(#'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/hojat/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/hojat/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/hojat/anaconda3/etc/profile.d/conda.sh"
+if [[ -d "$HOME/anaconda3" ]]; then
+    __conda_setup="$("$HOME/anaconda3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
     else
-        export PATH="/Users/hojat/anaconda3/bin:$PATH"
+        export PATH="$HOME/anaconda3/bin:$PATH"
     fi
+    unset __conda_setup
 fi
-unset __conda_setup
 # <<< conda initialize <<<
 
 export PATH="/usr/local/kerio/vpnclient:/opt/nvim/bin:$PATH"

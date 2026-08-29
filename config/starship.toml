@@ -1,15 +1,15 @@
 # Kubernetes module
-[kubernetes]
-format = '[$symbol$context( \($namespace\))]($style) '
-disabled = false
-symbol = "☸️ "
-style = "dimmed green"
+#[kubernetes]
+#format = '[$symbol$context( \($namespace\))]($style) '
+#disabled = false
+#symbol = "☸️ "
+#style = "dimmed green"
 
-[kubernetes.context_aliases]
-# Regex to match and alias context names
-"dev-cluster.*" = "dev"
-"test-cluster.*" = "test"
-"prod-cluster.*" = "prod"
+#[kubernetes.context_aliases]
+## Regex to match and alias context names
+#"dev-cluster.*" = "dev"
+#"test-cluster.*" = "test"
+#"prod-cluster.*" = "prod"
 
 [memory_usage]
 disabled = false
