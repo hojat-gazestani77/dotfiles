@@ -192,4 +192,3 @@ if [[ -d "$HOME/anaconda3" ]]; then
     fi
     unset __conda_setup
 fi
-eval "$(uv generate-shell-completion zsh)"
